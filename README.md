@@ -1,2 +1,2 @@
 # MGLiXu.github.io
-RECORD MY WORK
+***RECORD SOME TRIVIAL POINTS***
