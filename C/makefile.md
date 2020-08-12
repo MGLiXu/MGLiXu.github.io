@@ -1,4 +1,4 @@
-# makefile
+# makefile  
  $@ 目标文件  
  $^ 所有的依赖文件  
  $< 第一个依赖文件  
@@ -98,4 +98,5 @@ $(LDFLAGS)：引用之前定义的LDFLAGS变量，即链接参数
 $(CC) $(CFLAGS) $(LDFLAGS) main.c gfifo.c queue.c usbmonitor.c socket_rcv_360_server.c ./lib/srs_librtmp.a ./lib/libcrypto.a ./lib/libssl.a ./lib/libtinyalsa.a -o media_record -static -ldl -lstdc++ -lm -lpthread
 使用定的编译器、编译选项参数、链接选项参数，编译.c文件，并使用静态方式链接制定的库文件，以及编译器目录下的libdl.a、libstdc++.a、libm.a、libpthread.a库文件生成 media_record 可执行目标文件。
 ```
-简单地说，LDFLAGS是告诉链接器从哪里寻找库文件，而LIBS是告诉链接器要链接哪些库文件。
+简单地说，LDFLAGS是告诉链接器从哪里寻找库文件，而LIBS是告诉链接器要链接哪些库文件。  
+还可以看看[这个](https://blog.csdn.net/Qiuoooooo/article/details/79736954)简单的例子，关于.so的编译的  
