@@ -68,7 +68,8 @@ clean :
 |  -llibrary   | 链接时在标准搜索目录中寻找库文件，搜索名为liblibrary.a 或 liblibrary.so  |
 |  -Ldir  | 用于把新目录添加到库搜索路径上，可以使用相对和绝对路径，“-L.”、“-L./include”、“-L/opt/include”  |
 |  -Wl,option   | 把选项 option 传递给连接器，如果 option 中含有逗号,就在逗号处分割成多个选项  |
-|  -static  | 使用静态库链接生成目标文件，避免使用共享库，生成目标文件会比使用动态链接库大  |
+|  -static  | 使用静态库链接生成目标文件，避免使用共享库，生成目标文件会比使用动态链接库大  |  
+
 有时候LDFLAGS指定-L虽然能让链接器找到库进行链接，但是运行时链接器却找不到这个库，如果要让软件运行时库文件的路径也得到扩展，那么我们需要增加这两个库给”-Wl,R”，如```LDFLAGS = -L/var/xxx/lib -L/opt/mysql/lib -Wl,R/var/xxx/lib -Wl,R/opt/mysql/lib```
 
 ### 3.3 例子
