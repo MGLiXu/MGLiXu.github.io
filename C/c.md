@@ -22,6 +22,7 @@ extern "C"{
 c++调用  
 ```std::cout<<add(4, 5)<<std::endl;```  
 加入"extern C"后，在c++中add被编译为_add
+  
 
 # 2 JNI  
 [参考！](https://blog.csdn.net/hui12581/article/details/44832651)
@@ -110,11 +111,36 @@ JNIEnv *env, jobject obj, jstring string)
 	return mails;
 }
 ```
+  
 
 # 3 GCC Makefile Make CMakelists CMake关系
 [参考！](https://www.cnblogs.com/cv-pr/p/6206921.html)
+  
 
-
+# 4 pragma
+[参考！](https://docs.microsoft.com/en-us/cpp/preprocessor/comment-c-cpp?view=vs-2019)
+## 4.1 #pragma comment
+The following pragma causes the linker to search for the EMAPI.LIB library while linking. The linker searches first in the current working directory and then in the path specified in the LIB environment variable.
+```c
+#pragma comment( lib, "emapi" )
+```  
+## 4.2 #pragma once
+为了避免一个头文件被引用多次，可以使用#pragma once，与#ifndef作用类似，例如
+```c
+// header.h
+#pragma once
+// Code placed here is included only once per translation unit
+```
+```c
+// header.h
+// Demonstration of the #include guard idiom.
+// Note that the defined symbol can be arbitrary.
+#ifndef HEADER_H_     // equivalently, #if !defined HEADER_H_
+#define HEADER_H_
+// Code placed here is included only once per translation unit
+#endif // HEADER_H_
+```  
+但是#pragma once只能针对整个文件而不能针对其中几行代码。
 
 
 
