@@ -152,11 +152,24 @@
     show_date_time();
 </script>
 
-<!-- <script>
-    
+<script>
+    var together = new Date();
+		together.setFullYear(2022, 4, 7);
+		together.setHours(10);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+    setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
     $("#code").typewriter();
     
-</script> -->
+</script>
 
 
 <script>
@@ -165,7 +178,7 @@
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
 			//想说的话
-            S.UI.simulate("一周年快乐 宝贝");
+            S.UI.simulate("宝贝|一|周|年|快|乐|#countdown 3|💗");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -466,7 +479,7 @@
 
 
     S.ShapeBuilder = (function () {
-        var gap = 10,
+        var gap = 13,
             shapeCanvas = document.createElement('canvas'),
             shapeContext = shapeCanvas.getContext('2d'),
             fontSize = 500,
@@ -698,7 +711,7 @@
     }());
     S.init();
 </script>
-<audio  autoplay="autoplay" src="qingge.mp3" loop="loop" controls="controls">
+<audio  autoplay="autoplay" src="qingge.mp3" loop="loop" controls="controls" > 
 当前浏览器不支持音乐播放
 </audio>
 </body>
