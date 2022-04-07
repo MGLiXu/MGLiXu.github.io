@@ -38,6 +38,7 @@
             bottom: 100px;
             text-align: center;
             width: 100%;
+            width: 800px;
         }
 
         .canvas {
@@ -81,36 +82,58 @@
             position: fixed;
             bottom: 80px;
             text-align: center;
-            width: 100%;
+            width: 80%; 
+            
             font-weight: bold;
+            margin-left: 10%;
         }
 
         .text-right {
             position: fixed;
-            bottom: 50px;
+            bottom: 1px;
             text-align: right;
-            width: 100%;
+            width: 97%;
             font-weight: bold;
+            font-size:35px;
+            font-style:italic;
+            
         }
+        
     </style>
-
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script> 
 </head>
 
 <body>
-<!--更改为你女朋友的头像-->
+<!--头像-->
 <div class="cs">
-    <img src="lx.jpg" id="logo">
+    <img src="IMG_1584.JPG" id="logo">
 </div>
 <canvas class="canvas" width="1820" height="905"></canvas>
-<p class="text" style="color: #ed3073;">
-    We fell in love
-    <br/>
-    <span id="span_dt_dt"></span>
+
+
+
+<div id="code">
+    <p class="text" style="color: #4378da;">
+        
+        We fell in loveWe fell in loveWe f We fell in loveWe fell in loveWe f We fell in loveWe fell in loveWe f
+        We fell in loveWe fell in loveWe f We fell
+        We fell in loveWe fell in loveWe f We fell
+        <br/>
+        <span id="span_dt_dt"></span>
+    </p>
+</div>
+<p class="text-right" style="color: #1f289c;">
+    Xu   
 </p>
+
+
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("4/08/2021");//这个日期是可以修改的
+        BirthDay = new Date("4/08/2021");
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
@@ -128,13 +151,21 @@
 
     show_date_time();
 </script>
+
+<!-- <script>
+    
+    $("#code").typewriter();
+    
+</script> -->
+
+
 <script>
     var S = {
         init: function () {
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
 			//想说的话
-            S.UI.simulate("好像不能显示");
+            S.UI.simulate("一周年快乐 宝贝");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -435,7 +466,7 @@
 
 
     S.ShapeBuilder = (function () {
-        var gap = 13,
+        var gap = 10,
             shapeCanvas = document.createElement('canvas'),
             shapeContext = shapeCanvas.getContext('2d'),
             fontSize = 500,
@@ -443,7 +474,7 @@
 
         function fit() {
             shapeCanvas.width = Math.floor(window.innerWidth / gap) * gap;
-            shapeCanvas.height = Math.floor(window.innerHeight / gap) * gap;
+            shapeCanvas.height = Math.floor(window.innerHeight / gap) * gap ;
             shapeContext.fillStyle = 'red';
             shapeContext.textBaseline = 'middle';
             shapeContext.textAlign = 'center';

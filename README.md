@@ -1,2 +1,1 @@
-# MGLiXu.github.io
-***RECORD MY LEARNING PROCESS***
+None
